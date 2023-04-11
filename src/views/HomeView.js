@@ -1,14 +1,49 @@
-// import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
+import productList from "../components/List";
+import ProductDiv from "../components/ProductDiv";
+import moment from "moment";
 
 const HomeView = () => {
-  //本頁面的title和subtitle專門的字串，所以不用再傳入Layout
-  const title = "First page";
-  const subtitle = "Product page";
+  const renderProductList = () => {
+    console.log("productList", productList);
+    return productList.map((product) => {
+      let Date1 = moment(product.date).toDate();
+      console.log("Date1", Date1);
+      let joinElement = "";
+      if (product.joind && Date1 > new Date() && product.price >= 1000) {
+        joinElement = "joind";
+      }
+
+      let priceElement = <p>$ {product.price}</p>;
+      if (product.isSale) {
+        priceElement = (
+          <p>
+            $ <s>{product.price}</s> {product.salePrice}
+          </p>
+        );
+      }
+      console.log("priceElement", priceElement);
+      return (
+        <ProductDiv
+          product={product}
+          key={product.id}
+          joinElement={joinElement}
+          priceElement={priceElement}
+        />
+      );
+    });
+  };
+
+  const title = "Home";
+  const subtitle = "Welcome to our online store";
+
   return (
     <div>
       <Layout title={title} subtitle={subtitle}>
-        <h1>Home View</h1>
+        <h1 style={{ textAlign: "center" }}>All Product，過期不能點</h1>
+        <section>
+          <div className="row_1">{renderProductList()}</div>
+        </section>
       </Layout>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
+import "./index.scss";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
     path: "/about",
     element: <AboutView />,
   },
+  // {
+  //   path: "/ProductPage/ProductPage",
+  //   element: <ProductPage />,
+  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
