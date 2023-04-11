@@ -22,7 +22,7 @@ const HomeView = () => {
           </p>
         );
       }
-      console.log("priceElement", priceElement);
+
       return (
         <ProductDiv
           product={product}

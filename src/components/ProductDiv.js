@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 const ProductDiv = ({ product, joinElement, priceElement }) => {
   let Date1 = moment(product.date).toDate();
@@ -15,18 +16,16 @@ const ProductDiv = ({ product, joinElement, priceElement }) => {
           </div>
         </div>
       ) : (
-        <div
+        <Link
+          to={`/ProductPage/${product.id}`}
           className={`card ${joinElement}`}
-          onClick={() =>
-            (window.location.href = `https://www.youtube.com/watch?v=${product.id}`)
-          }
         >
           <img src={`https://picsum.photos/id/${product.id}/1000/600`} alt="" />
           <div className="card-body">
             <h3>{product.name}</h3>
             {priceElement}
           </div>
-        </div>
+        </Link>
       )}
     </div>
   );

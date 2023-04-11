@@ -20,11 +20,9 @@ const router = createBrowserRouter([
     path: "/about",
     element: <AboutView />,
   },
-  // {
-  //   path: "/ProductPage/ProductPage",
-  //   element: <ProductPage />,
-  // },
 ]);
+
+console.log("router: ", router);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
