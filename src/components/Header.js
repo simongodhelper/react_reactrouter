@@ -14,6 +14,9 @@ const Header = ({
       <Link to="/about" className="btn btn-primary">
         About
       </Link>
+      <Link to="/add" className="btn btn-primary">
+        Add
+      </Link>
     </header>
   );
 };

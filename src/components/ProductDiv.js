@@ -17,10 +17,7 @@ const ProductDiv = ({ product, joinElement, priceElement }) => {
           </div>
         </div>
       ) : (
-        <Link
-          to={`/ProductPage/${product.id}`}
-          className={`card ${joinElement}`}
-        >
+        <Link to="../ProductPage/ProductPage" className={`card ${joinElement}`}>
           <img src={`https://picsum.photos/id/${product.id}/1000/600`} alt="" />
           <div className="card-body">
             <h3>{product.name}</h3>

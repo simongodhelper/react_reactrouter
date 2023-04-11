@@ -1,14 +1,15 @@
+import Layout from "../../components/Layout";
+
 const ProductPage = () => {
+  const title = "ProductPage";
+  const subtitle = "Welcome to ProductPage";
+
   return (
-    <ul>
-      {products.map((product) => (
-        <li key={product.id}>
-          <h2>{product.name}</h2>
-          <p>{product.description}</p>
-          <img src={product.image} alt={product.name} />
-        </li>
-      ))}
-    </ul>
+    <div>
+      <Layout title={title} subtitle={subtitle}>
+        <h1 style={{ textAlign: "center" }}>ProductPage</h1>
+      </Layout>
+    </div>
   );
 };
 
