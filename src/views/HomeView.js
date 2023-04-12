@@ -5,7 +5,6 @@ import moment from "moment";
 
 const HomeView = () => {
   const renderProductList = () => {
-    console.log("productList", productList);
     return productList.map((product) => {
       let Date1 = moment(product.date).toDate();
       console.log("Date1", Date1);

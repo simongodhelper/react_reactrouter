@@ -48,7 +48,7 @@ const AboutView = () => {
     <div>
       <Layout title={title} subtitle={subtitle}>
         <h1 style={{ textAlign: "center" }}>
-          1,3,5,7並按時間排序，售價大於10000不顯示
+          只顯示1,3,5,7並按時間排序，售價大於10000不顯示
         </h1>
         <section>
           <div className="row_1">{renderProductList()}</div>
