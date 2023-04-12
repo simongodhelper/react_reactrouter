@@ -13,11 +13,11 @@ const HomeView = () => {
         joinElement = "joind";
       }
 
-      let priceElement = <p>$ {product.price}</p>;
+      let priceElement = <span>{product.salePrice}</span>;
       if (product.isSale) {
         priceElement = (
           <p>
-            $ <s>{product.price}</s> {product.salePrice}
+            <s>{product.price}</s> <span>{product.salePrice}</span>
           </p>
         );
       }

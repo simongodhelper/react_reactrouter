@@ -8,11 +8,11 @@ const ProductPage = (product) => {
     (item) => item.id === Number(localStorage.getItem("productId"))
   );
 
-  let priceElement = <p>$ {productToShow.price}</p>;
+  let priceElement = <span>{productToShow.salePrice}</span>;
   if (productToShow.isSale) {
     priceElement = (
       <p>
-        $ <s>{productToShow.price}</s> {productToShow.salePrice}
+        <s>{productToShow.price}</s> <span>{productToShow.salePrice}</span>
       </p>
     );
   }

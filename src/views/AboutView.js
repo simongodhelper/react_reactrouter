@@ -7,7 +7,7 @@ const AboutView = () => {
   const renderProductList = () => {
     const filteredList = productList.filter(
       (product) =>
-        [1, 3, 5, 7].includes(product.id) && !(product.salePrice >= 10000)
+        [1, 3, 5, 7].includes(product.id) && !(product.price >= 10000)
     );
     const sortedProductList = filteredList.sort((a, b) =>
       moment(b.date).diff(moment(a.date))
@@ -21,11 +21,11 @@ const AboutView = () => {
         joinElement = "joind";
       }
 
-      let priceElement = <p>$ {product.price}</p>;
+      let priceElement = <span>{product.salePrice}</span>;
       if (product.isSale) {
         priceElement = (
           <p>
-            $ <s>{product.price}</s> {product.salePrice}
+            <s>{product.price}</s> <span>{product.salePrice}</span>
           </p>
         );
       }
