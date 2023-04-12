@@ -6,7 +6,6 @@ const ProductPage = (product) => {
   const subtitle = "Welcome to ProductPage";
   const productToShow = productList.find((item) => item.id === 1);
 
-  console.log("ProductPage.js", product);
   return (
     <div style={{ textAlign: "center" }}>
       <Layout title={title} subtitle={subtitle}>

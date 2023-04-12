@@ -10,7 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 import HomeView from "./views/HomeView";
 import AboutView from "./views/AboutView";
 import AddView from "./views/Add";
-import ProductPage from "./views/ProductPage/1";
+import ProductPage from "./views/ProductPage/detail";
 
 //creat router
 const router = createBrowserRouter([
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <AddView />,
   },
   {
-    path: "/ProductPage/1",
+    path: "/ProductPage/detail",
     element: <ProductPage />,
   },
 ]);
