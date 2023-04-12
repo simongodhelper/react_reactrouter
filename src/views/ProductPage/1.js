@@ -8,11 +8,17 @@ const ProductPage = (product) => {
 
   console.log("ProductPage.js", product);
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <Layout title={title} subtitle={subtitle}>
-        <h1 style={{ textAlign: "center" }}>no.{productToShow.id}</h1>
-        <h3 style={{ textAlign: "center" }}>{productToShow.name}</h3>
-        <p style={{ textAlign: "center" }}>{productToShow.date}</p>
+        <h1>no.{productToShow.id}</h1>
+        <img
+          src={`https://picsum.photos/id/${productToShow.id}/1000/600`}
+          style={{ width: "50%" }}
+          alt=""
+        />
+        <h3>{productToShow.name}</h3>
+        <p>{productToShow.date}</p>
+        <p>{productToShow.detail}</p>
       </Layout>
     </div>
   );

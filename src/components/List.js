@@ -7,6 +7,7 @@ const productList = [
     joind: true,
     salePrice: 160,
     date: "2023-10-25 15:20:23",
+    detail: "產品A的詳細資訊",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const productList = [
     joind: false,
     salePrice: 800,
     date: "2021-10-20 15:20:23",
+    detail: "產品B的詳細資訊",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const productList = [
     joind: true,
     salePrice: 900,
     date: "2020-10-20 15:20:23",
+    detail: "產品C的詳細資訊",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const productList = [
     joind: true,
     salePrice: 950,
     date: "2021-10-20 15:20:23",
+    detail: "產品D的詳細資訊",
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ const productList = [
     joind: true,
     salePrice: 950,
     date: "2023-10-20 15:20:23",
+    detail: "產品E的詳細資訊",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ const productList = [
     joind: true,
     salePrice: 950,
     date: "2022-10-20 15:20:23",
+    detail: "產品F的詳細資訊",
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ const productList = [
     joind: true,
     salePrice: 95000,
     date: "2023-10-20 15:20:23",
+    detail: "產品G的詳細資訊",
   },
 ];
 
