@@ -40,7 +40,9 @@ const HomeView = () => {
   return (
     <div>
       <Layout title={title} subtitle={subtitle}>
-        <h1 style={{ textAlign: "center" }}>All Product，過期不能點</h1>
+        <h1 style={{ textAlign: "center" }}>
+          All Product，按照id排序，過期不能點
+        </h1>
         <section>
           <div className="row_1">{renderProductList()}</div>
         </section>
