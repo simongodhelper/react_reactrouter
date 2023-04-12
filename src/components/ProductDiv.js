@@ -16,7 +16,13 @@ const ProductDiv = ({ product, joinElement, priceElement }) => {
           </div>
         </div>
       ) : (
-        <Link to="../ProductPage/detail" className={`card ${joinElement}`}>
+        <Link
+          to="../ProductPage/detail"
+          className={`card ${joinElement}`}
+          onClick={() => {
+            localStorage.setItem("productId", product.id);
+          }}
+        >
           <img src={`https://picsum.photos/id/${product.id}/1000/600`} alt="" />
           <div className="card-body">
             <h3>{product.name}</h3>
