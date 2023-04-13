@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import productList from "../../components/List";
 
-const ProductPage = (product) => {
+const ProductPage = () => {
   const title = "ProductPage";
   const subtitle = "Welcome to ProductPage";
   const productToShow = productList.find(
@@ -21,17 +21,30 @@ const ProductPage = (product) => {
     <div style={{ textAlign: "center" }}>
       <Layout title={title} subtitle={subtitle}>
         <h1>no.{productToShow.id}</h1>
-        <img
-          src={`https://picsum.photos/id/${productToShow.id}/1000/600`}
-          style={{ width: "50%" }}
-          alt=""
-        />
+        <div
+          className={productToShow.joind ? "joind" : ""}
+          style={{ width: "50%", position: "relative", margin: "0 auto" }}
+        >
+          <img
+            src={`https://picsum.photos/id/${productToShow.id}/1000/600`}
+            style={{ width: "100%" }}
+            alt=""
+          />
+        </div>
+
         <h3>{productToShow.name}</h3>
         <p>{productToShow.date}</p>
         <p>{productToShow.detail_1}</p>
         <div>{productToShow.img_1}</div>
         <p>{productToShow.detail_2}</p>
         <p className="card-body">{priceElement}</p>
+        {productToShow.joind ? (
+          <button className="btn btn-primary" disabled>
+            千萬不要放棄治療
+          </button>
+        ) : (
+          <button className="btn btn-primary">我要入坑</button>
+        )}
       </Layout>
     </div>
   );

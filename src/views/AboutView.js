@@ -14,10 +14,8 @@ const AboutView = () => {
     );
 
     return sortedProductList.map((product) => {
-      let Date1 = moment(product.date).toDate();
-
       let joinElement = "";
-      if (product.joind && Date1 > new Date() && product.price >= 1000) {
+      if (product.joind) {
         joinElement = "joind";
       }
 

@@ -9,7 +9,7 @@ const HomeView = () => {
       let Date1 = moment(product.date).toDate();
       console.log("Date1", Date1);
       let joinElement = "";
-      if (product.joind && Date1 > new Date() && product.price >= 1000) {
+      if (product.joind) {
         joinElement = "joind";
       }
 
