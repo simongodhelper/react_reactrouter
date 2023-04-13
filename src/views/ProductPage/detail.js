@@ -40,7 +40,7 @@ const ProductPage = () => {
         <p className="card-body">{priceElement}</p>
         {productToShow.joind ? (
           <button className="btn btn-primary" disabled>
-            千萬不要放棄治療33366
+            千萬不要放棄治療XD
           </button>
         ) : (
           <button className="btn btn-primary">我要入坑</button>
