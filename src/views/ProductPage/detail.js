@@ -35,8 +35,16 @@ const ProductPage = () => {
         <h3>{productToShow.name}</h3>
         <p>{productToShow.date}</p>
         <p>{productToShow.detail_1}</p>
-        <div>{productToShow.img_1}</div>
+        <div className="img_content">
+          {productToShow.img_1}
+          {productToShow.img_2}
+        </div>
         <p>{productToShow.detail_2}</p>
+        <div className="img_content">
+          {productToShow.img_3}
+          {productToShow.img_4}
+        </div>
+        <p>{productToShow.detail_3}</p>
         <p className="card-body">{priceElement}</p>
         {productToShow.joind ? (
           <button className="btn btn-primary" disabled>

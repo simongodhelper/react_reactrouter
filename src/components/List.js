@@ -8,13 +8,10 @@ const productList = [
     date: "2023-10-25 15:20:23",
     detail_1: "產品A的詳細資訊",
     detail_2: "XDXDXDXDXDDXD",
-    img_1: (
-      <img
-        src={`https://picsum.photos/id/10/1000/600`}
-        style={{ width: "50%" }}
-        alt=""
-      />
-    ),
+    detail_3: "123123123123123123",
+    img_1: <img src={`https://picsum.photos/id/10/1000/600`} alt="" />,
+    img_2: <img src={`https://picsum.photos/id/11/1000/600`} alt="" />,
+    img_3: <img src={`https://picsum.photos/id/12/1000/600`} alt="" />,
   },
   {
     id: 2,
@@ -22,8 +19,10 @@ const productList = [
     price: 800,
     joind: true,
     salePrice: 1801,
-    date: "2023-10-20 15:20:23",
+    date: "2023-10-25 15:20:23",
     detail_1: "產品B的詳細資訊",
+    detail_2: "XDXDXDXDXDDXD",
+    img_1: <img src={`https://picsum.photos/id/12/1000/600`} alt="" />,
   },
   {
     id: 3,
