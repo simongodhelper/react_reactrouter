@@ -6,7 +6,28 @@ $white: #fff;
 * {
     box-sizing: border-box;
 }
-
+a{
+    text-decoration: none;
+}
+.card-body{
+    s,span{
+        position: relative;
+        padding-left: 45px;
+        margin-right: 10px
+    };
+    s::before{
+        position: absolute;
+        content: '原價 :';
+        left: 0;
+        width: 40px;
+    };
+    span::before{
+        position: absolute;
+        content: '特價 :';
+        left: 0;
+        width: 40px;
+    };
+}
 header {
     background: $dark;
     color: $white;

@@ -31,7 +31,7 @@ const ProductPage = (product) => {
         <p>{productToShow.detail_1}</p>
         <div>{productToShow.img_1}</div>
         <p>{productToShow.detail_2}</p>
-        <p>{priceElement}</p>
+        <p className="card-body">{priceElement}</p>
       </Layout>
     </div>
   );

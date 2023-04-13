@@ -21,7 +21,7 @@ const productList = [
     name: "產品B",
     price: 800,
     joind: false,
-    salePrice: 801,
+    salePrice: 1801,
     date: "2023-10-20 15:20:23",
     detail_1: "產品B的詳細資訊",
   },
@@ -30,7 +30,7 @@ const productList = [
     name: "產品C",
     price: 1000,
     joind: true,
-    salePrice: 900,
+    salePrice: "",
     date: "2020-10-20 15:20:23",
     detail_1: "產品C的詳細資訊",
   },
@@ -71,7 +71,17 @@ const productList = [
     detail_1: "產品G的詳細資訊",
   },
 ];
-
-console.log(productList);
+productList
+  .map((product) => {
+    if (product.price < product.salePrice || product.salePrice === "") {
+      product.salePrice = product.price;
+    }
+    return product;
+  })
+  .forEach((product) => {
+    if (new Date(product.date) < new Date()) {
+      product.salePrice = product.price;
+    }
+  });
 
 export default productList;
