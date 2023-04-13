@@ -21,13 +21,9 @@ const ProductPage = () => {
     <div style={{ textAlign: "center" }}>
       <Layout title={title} subtitle={subtitle}>
         <h1>no.{productToShow.id}</h1>
-        <div
-          className={productToShow.joind ? "joind" : ""}
-          style={{ width: "50%", position: "relative", margin: "0 auto" }}
-        >
+        <div className={(productToShow.joind ? "joind" : "", "img_content")}>
           <img
             src={`https://picsum.photos/id/${productToShow.id}/1000/600`}
-            style={{ width: "100%" }}
             alt=""
           />
         </div>

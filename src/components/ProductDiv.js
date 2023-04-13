@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const ProductDiv = ({ product, joinElement, priceElement }) => {
   let Date1 = moment(product.date).toDate();
 
+  //是否過期Date1 < new Date()
   return (
     <div key={product.id} className={`col_1`}>
       {Date1 < new Date() ? (

@@ -9,16 +9,18 @@ const AboutView = () => {
       (product) =>
         [1, 3, 5, 7].includes(product.id) && !(product.price >= 10000)
     );
+    //時間排序降冪
     const sortedProductList = filteredList.sort((a, b) =>
       moment(b.date).diff(moment(a.date))
     );
 
     return sortedProductList.map((product) => {
+      //是否已參加
       let joinElement = "";
       if (product.joind) {
         joinElement = "joind";
       }
-
+      //售價
       let priceElement = <span>{product.salePrice}</span>;
       if (product.price > product.salePrice) {
         priceElement = (

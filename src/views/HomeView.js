@@ -1,13 +1,11 @@
 import Layout from "../components/Layout";
 import productList from "../components/List";
 import ProductDiv from "../components/ProductDiv";
-import moment from "moment";
 
 const HomeView = () => {
   const renderProductList = () => {
     return productList.map((product) => {
-      let Date1 = moment(product.date).toDate();
-      console.log("Date1", Date1);
+      //是否已參加
       let joinElement = "";
       if (product.joind) {
         joinElement = "joind";
