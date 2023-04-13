@@ -8,8 +8,8 @@ const ProductPage = (product) => {
     (item) => item.id === Number(localStorage.getItem("productId"))
   );
 
-  let priceElement = <span>{productToShow.salePrice}</span>;
-  if (productToShow.isSale) {
+  let priceElement = <span>{productToShow.price}</span>;
+  if (productToShow.price > productToShow.salePrice) {
     priceElement = (
       <p>
         <s>{productToShow.price}</s> <span>{productToShow.salePrice}</span>

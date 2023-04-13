@@ -14,7 +14,7 @@ const HomeView = () => {
       }
 
       let priceElement = <span>{product.salePrice}</span>;
-      if (product.isSale) {
+      if (product.price > product.salePrice) {
         priceElement = (
           <p>
             <s>{product.price}</s> <span>{product.salePrice}</span>
