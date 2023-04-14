@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout";
 import productList from "../../components/List";
+import Pro1 from "./pro1";
 
 const ProductPage = () => {
   const title = "ProductPage";
@@ -15,6 +16,12 @@ const ProductPage = () => {
         <s>{productToShow.price}</s> <span>{productToShow.salePrice}</span>
       </p>
     );
+  }
+
+  // 檢查產品id是否為1，若是則引入Pro1組件
+  let pro1Element = null;
+  if (productToShow.id === 1) {
+    pro1Element = <Pro1 />;
   }
 
   return (
@@ -40,14 +47,15 @@ const ProductPage = () => {
           {productToShow.img_3}
           {productToShow.img_4}
         </div>
+        {pro1Element}
         <p>{productToShow.detail_3}</p>
         <p className="card-body">{priceElement}</p>
         {productToShow.joind ? (
           <button className="btn btn-primary" disabled>
-            千萬不要放棄治療XD1234
+            千萬不要放棄治療
           </button>
         ) : (
-          <button className="btn btn-primary">我要入坑</button>
+          <button className="btn btn-primary">簽下去</button>
         )}
       </Layout>
     </div>
