@@ -9,7 +9,7 @@ const CreditCard = () => {
     <Layout>
       <div class="bg-white border login_div">
         <Form>
-          <Form.Group className="mb-3 d_b" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>信用卡卡號</Form.Label>
             <span className="error">不要想不開</span>
             <div style={{ display: "flex", gap: "0.3em" }}>

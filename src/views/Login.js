@@ -9,7 +9,7 @@ const Login = () => {
     <Layout>
       <div class="bg-white border login_div">
         <Form>
-          <Form.Group className="mb-3 d_b" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <span className="error">安安您哪位?</span>
             <Form.Control type="email" placeholder="Enter email" />
