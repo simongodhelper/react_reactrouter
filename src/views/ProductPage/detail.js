@@ -2,6 +2,7 @@ import Layout from "../../components/Layout";
 import productList from "../../components/List";
 import Pro1 from "./pro1";
 import Pro2 from "./pro2";
+import ProAll from "./proAll";
 
 const ProductPage = () => {
   const title = "ProductPage";
@@ -40,8 +41,9 @@ const ProductPage = () => {
         </div>
 
         <h3>{productToShow.name}</h3>
-        <p>{productToShow.date}</p>
-        <p>{productToShow.detail_1}</p>
+        <div className="img_content" style={{ textAlign: "left" }}>
+          <p className="product-detail">{productToShow.detail_1}</p>
+        </div>
         <div className="img_content">
           {productToShow.img_1}
           {productToShow.img_2}
@@ -54,7 +56,10 @@ const ProductPage = () => {
           {productToShow.img_4}
         </div>
         {proElement}
-        <p>{productToShow.detail_3}</p>
+        <ProAll />
+        <div className="img_content" style={{ textAlign: "left" }}>
+          <p className="product-detail">{productToShow.detail_3}</p>
+        </div>
         <p className="card-body">{priceElement}</p>
         {productToShow.joind ? (
           <button className="btn btn-primary" disabled>
