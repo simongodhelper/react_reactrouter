@@ -23,7 +23,12 @@ const CreditCard = () => {
           <Form.Group className="mb-3 d_b" controlId="formId">
             <Form.Label>請輸入末3碼</Form.Label>
             <span className="error">不要想不開</span>
-            <Form.Control type="text" placeholder="請輸入末3碼" maxlength="3" />
+            <Form.Control
+              type="text"
+              placeholder=""
+              maxlength="3"
+              style={{ width: "55px" }}
+            />
           </Form.Group>
 
           <Form.Group className="mb-3 d_b" controlId="formBank">
