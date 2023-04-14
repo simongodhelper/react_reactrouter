@@ -1,6 +1,7 @@
 import Layout from "../../components/Layout";
 import productList from "../../components/List";
 import Pro1 from "./pro1";
+import Pro2 from "./pro2";
 
 const ProductPage = () => {
   const title = "ProductPage";
@@ -19,16 +20,19 @@ const ProductPage = () => {
   }
 
   // 檢查產品id是否為1，若是則引入Pro1組件
-  let pro1Element = null;
+  let proElement = null;
   if (productToShow.id === 1) {
-    pro1Element = <Pro1 />;
+    proElement = <Pro1 />;
+  }
+  if (productToShow.id === 2) {
+    proElement = <Pro2 />;
   }
 
   return (
     <div style={{ textAlign: "center" }}>
       <Layout title={title} subtitle={subtitle}>
         <h1>no.{productToShow.id}</h1>
-        <div className={(productToShow.joind ? "joind" : "", "img_content")}>
+        <div className={`img_content ${productToShow.joind ? "joind" : ""}`}>
           <img
             src={`https://picsum.photos/id/${productToShow.id}/1000/600`}
             alt=""
@@ -42,12 +46,14 @@ const ProductPage = () => {
           {productToShow.img_1}
           {productToShow.img_2}
         </div>
-        <p>{productToShow.detail_2}</p>
+        <div className="img_content" style={{ textAlign: "left" }}>
+          <p className="product-detail">{productToShow.detail_2}</p>
+        </div>
         <div className="img_content">
           {productToShow.img_3}
           {productToShow.img_4}
         </div>
-        {pro1Element}
+        {proElement}
         <p>{productToShow.detail_3}</p>
         <p className="card-body">{priceElement}</p>
         {productToShow.joind ? (

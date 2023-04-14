@@ -7,7 +7,8 @@ const productList = [
     salePrice: 100,
     date: "2023-10-25 15:20:23",
     detail_1: "產品A的詳細資訊",
-    detail_2: "XDXDXDXXDXDXDXXDXDXDXDX\nDXDDXD",
+    detail_2:
+      "後台傳入時，可支援按enter可換行X可換行可換行\n可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行\nDXDDXD",
     detail_3: "123123123\n123123123",
     img_1: <img src={`https://picsum.photos/id/10/1000/600`} alt="" />,
     img_2: <img src={`https://picsum.photos/id/11/1000/600`} alt="" />,
@@ -21,7 +22,8 @@ const productList = [
     salePrice: 1801,
     date: "2023-10-25 15:20:23",
     detail_1: "產品B的詳細資訊",
-    detail_2: "XDXDXDXDXDDXD",
+    detail_2:
+      "後台傳入時，可支援按enter可換行X可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行可換行\nDXDDXD",
     img_1: <img src={`https://picsum.photos/id/12/1000/600`} alt="" />,
   },
   {

@@ -111,5 +111,8 @@ header {
     }
 }
 .product-detail {
+//這是用在<div>模擬<pre>的標籤
   white-space: pre-line;
+//   white-space: pre-wrap; 這是用在<pre>可換行的標籤
+  word-wrap: break-word;
 }
