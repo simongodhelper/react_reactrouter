@@ -9,8 +9,9 @@ import reportWebVitals from "./reportWebVitals";
 // import views
 import HomeView from "./views/HomeView";
 import AboutView from "./views/AboutView";
-import Login from "./views/Login";
 import ProductPage from "./views/ProductPage/detail";
+import Login from "./views/Login";
+import CreditCard from "./views/CreditCard";
 
 //creat router
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/Login",
     element: <Login />,
+  },
+  {
+    path: "/CreditCard",
+    element: <CreditCard />,
   },
 ]);
 

@@ -3,6 +3,7 @@ import productList from "../../components/List";
 import Pro1 from "./pro1";
 import Pro2 from "./pro2";
 import ProAll from "./proAll";
+import { Link } from "react-router-dom";
 
 const ProductPage = () => {
   const title = "ProductPage";
@@ -66,7 +67,9 @@ const ProductPage = () => {
             千萬不要放棄治療
           </button>
         ) : (
-          <button className="btn btn-primary">簽下去</button>
+          <Link to="../CreditCard" className="btn-primary">
+            <button className="btn btn-primary">簽下去</button>
+          </Link>
         )}
       </Layout>
     </div>

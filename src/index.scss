@@ -133,3 +133,15 @@ header {
     color: #fff;
     text-decoration: underline;
 }
+
+.d_b{
+    .error{
+        padding-left: 0.5em;
+        color: red;
+        font-weight: bold;
+        display: inline-block;
+    }
+    input{
+        border: red solid 1px;
+    }
+}
