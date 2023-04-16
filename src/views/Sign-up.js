@@ -1,13 +1,8 @@
 import { useState } from "react";
-import auth from "../lib/db";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import Layout from "../components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
 
 const SignUpView = () => {
   const navigate = useNavigate();
@@ -16,7 +11,7 @@ const SignUpView = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(getAuth(), email, password)
       .then((res) => {
         navigate("/");
       })
@@ -35,6 +30,7 @@ const SignUpView = () => {
         <form onSubmit={formSubmitHandler}>
           <div className="mb-3">
             <label htmlFor="signUpEmail">Email: {email}</label>
+            <span className="error">安安您哪位?</span>
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="email"
@@ -45,6 +41,7 @@ const SignUpView = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="signUpPassword">Password: {password}</label>
+            <span className="error">安安您哪位?</span>
             <input
               onChange={(e) => setPassword(e.target.value)}
               minLength={8}
