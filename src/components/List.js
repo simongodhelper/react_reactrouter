@@ -71,6 +71,15 @@ const productList = [
     date: "2023-10-20 15:20:23",
     detail_1: "產品G的詳細資訊",
   },
+  {
+    id: 8,
+    name: "產品H",
+    price: 13000,
+    joind: false,
+    salePrice: 9600,
+    date: "2023-10-20 15:20:23",
+    detail_1: "產品G的詳細資訊",
+  },
 ];
 productList
   .map((product) => {

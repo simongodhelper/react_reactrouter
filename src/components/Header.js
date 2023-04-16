@@ -12,6 +12,9 @@ const Header = ({
       <Link to="/Login" className="login_info">
         Login
       </Link>
+      <Link to="/Sign-up" className="SignUp_info">
+        Sign-up
+      </Link>
 
       <h1>{title}</h1>
       <p>{subtitle}</p>

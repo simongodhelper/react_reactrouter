@@ -11,6 +11,7 @@ import HomeView from "./views/HomeView";
 import AboutView from "./views/AboutView";
 import ProductPage from "./views/ProductPage/detail";
 import Login from "./views/Login";
+import SignUpView from "./views/Sign-up";
 import CreditCard from "./views/CreditCard";
 
 //creat router
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/Login",
     element: <Login />,
+  },
+  {
+    path: "/Sign-up",
+    element: <SignUpView />,
   },
   {
     path: "/CreditCard",
