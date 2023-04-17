@@ -9,13 +9,19 @@ const Header = ({
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    // 检查用户是否已经登录
+    // 檢查使用者是否已經登入
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       setIsLoggedIn(true);
-      setUsername(user.username);
+      setUsername(user?.username);
     }
   }, []);
+
+  const handleLogout = () => {
+    // 設置logout狀態為false，並刪除本地存儲的使用者信息
+    setIsLoggedIn(false);
+    localStorage.removeItem("user");
+  };
 
   return (
     <header
@@ -24,16 +30,19 @@ const Header = ({
     >
       <div className="login_header">
         {isLoggedIn ? (
-          <span>{username}，您回來了</span>
+          <>
+            <span>{username}，您回來了</span>
+            <Link to="/" onClick={handleLogout}>
+              Logout
+            </Link>
+          </>
         ) : (
-          <span>安安請登入：</span>
+          <>
+            <span>安安請登入：</span>
+            <Link to="/Login">Login</Link>
+            <Link to="/Sign-up">Sign-up</Link>
+          </>
         )}
-        <Link to="/Login" className="">
-          Login
-        </Link>
-        <Link to="/Sign-up" className="">
-          Sign-up
-        </Link>
       </div>
 
       <h1>{title}</h1>

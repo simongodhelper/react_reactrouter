@@ -8,11 +8,13 @@ const SignUpView = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(getAuth(), email, password)
       .then((res) => {
+        localStorage.setItem("user", JSON.stringify({ username: name }));
         navigate("/");
       })
       .catch((err) => {
@@ -26,8 +28,7 @@ const SignUpView = () => {
       <div class="bg-white border login_div">
         <form onSubmit={formSubmitHandler}>
           <div className="mb-3">
-            <label htmlFor="signUpEmail">Email: {email}</label>
-            <span className="error">安安您哪位?</span>
+            <label htmlFor="signUpEmail">Email:</label>
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="email"
@@ -37,13 +38,22 @@ const SignUpView = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="signUpPassword">Password: {password}</label>
-            <span className="error">安安您哪位?</span>
+            <label htmlFor="signUpPassword">Password:</label>
             <input
               onChange={(e) => setPassword(e.target.value)}
               minLength={8}
               type="password"
               id="signUpPassword"
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="signUpName">Name:</label>
+            <input
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              id="signUpName"
               className="form-control"
               required
             />
