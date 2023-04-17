@@ -41,12 +41,9 @@ const AboutView = () => {
     });
   };
 
-  const title = undefined;
-  const subtitle = undefined;
-
   return (
     <div>
-      <Layout title={title} subtitle={subtitle}>
+      <Layout title="3C商品" subtitle="3C商品">
         <h1 style={{ textAlign: "center" }}>
           只顯示1,3,5,7並按時間排序，售價大於10000不顯示
         </h1>

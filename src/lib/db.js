@@ -1,7 +1,11 @@
 // firebase initialization
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+//auth只有帳密登入
 import { getAuth } from "firebase/auth";
+//database有帳密和其他資料
+import { getDatabase } from "firebase/database";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,5 +24,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getDatabase(app);
 
-export default auth;
+const firebase = { auth, db };
+export default firebase;

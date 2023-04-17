@@ -39,10 +39,10 @@ const Header = ({
       <h1>{title}</h1>
       <p>{subtitle}</p>
       <Link to="/" className="btn btn-primary me-2">
-        Home
+        ALL
       </Link>
       <Link to="/about" className="btn btn-primary">
-        About
+        3C商品
       </Link>
     </header>
   );

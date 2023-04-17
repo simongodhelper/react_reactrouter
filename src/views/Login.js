@@ -7,9 +7,6 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const title = "登入頁";
-  const subtitle = "Welcome Login";
-
   // const [狀態, 設定狀態的函數] = useState(狀態初始值)
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -28,11 +25,11 @@ const Login = () => {
   };
 
   return (
-    <Layout title={title} subtitle={subtitle}>
+    <Layout title="登入頁" subtitle="Welcome Login">
       <div class="bg-white border login_div">
         <Form onSubmit={formSubmitHandler}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>Email</Form.Label>
             <span className="error">安安您哪位?</span>
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -41,9 +38,6 @@ const Login = () => {
               className="form-control"
               required
             />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3 d_b" controlId="formBasicPassword">

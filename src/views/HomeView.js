@@ -31,12 +31,9 @@ const HomeView = () => {
     });
   };
 
-  const title = "Home";
-  const subtitle = "Welcome to our online store";
-
   return (
     <div>
-      <Layout title={title} subtitle={subtitle}>
+      <Layout title="Home" subtitle="ALL Product">
         <h1 style={{ textAlign: "center" }}>
           All Product，按照id排序，過期不能點
         </h1>

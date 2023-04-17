@@ -21,11 +21,8 @@ const SignUpView = () => {
       });
   };
 
-  const title = "註冊頁";
-  const subtitle = "Welcome Sign-up";
-
   return (
-    <Layout title={title} subtitle={subtitle}>
+    <Layout title="註冊頁" subtitle="Welcome Sign-up">
       <div class="bg-white border login_div">
         <form onSubmit={formSubmitHandler}>
           <div className="mb-3">
