@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,8 +13,16 @@ const SignUpView = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(getAuth(), email, password)
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
+        const uid = res.user.uid;
+        const database = getDatabase();
+        set(ref(database, `users/${uid}`), {
+          name: name,
+          email: email,
+          uid: uid,
+        });
         localStorage.setItem("user", JSON.stringify({ username: name }));
         navigate("/");
       })
