@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 //database有帳密和其他資料
 import { getDatabase } from "firebase/database";
+// import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,6 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
+// const analytics = getAnalytics(app);
 
 const firebase = { auth, db };
 export default firebase;

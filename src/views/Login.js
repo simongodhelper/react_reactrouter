@@ -19,8 +19,8 @@ const Login = () => {
         navigate("/");
       })
       .catch((err) => {
-        console.log("註冊失敗", err);
-        alert("註冊失敗");
+        console.log("登入失敗", err);
+        alert("登入失敗");
       });
   };
 
@@ -40,7 +40,7 @@ const Login = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3 d_b" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <span className="error">安安您哪位?</span>
             <input
