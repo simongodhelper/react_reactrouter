@@ -10,6 +10,9 @@ const SignUpView = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [creditCards, setCreditCards] = useState(["", "", "", ""]); // 存儲4組信用卡卡號
+  const [creditCardThree, setCreditCardThree] = useState("");
+  const [phone, setPhone] = useState("");
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -22,6 +25,9 @@ const SignUpView = () => {
           name: name,
           email: email,
           uid: uid,
+          creditCards: creditCards,
+          creditCardThree: creditCardThree,
+          phone: phone,
         });
         localStorage.setItem("user", JSON.stringify({ username: name }));
         navigate("/");
@@ -30,6 +36,13 @@ const SignUpView = () => {
         console.log("註冊失敗", err);
         alert("註冊失敗");
       });
+  };
+  // 處理單個信用卡卡號輸入框的 onChange 事件
+  const handleCreditCardChange = (e) => {
+    const newCreditCards = [...creditCards];
+    const index = parseInt(e.target.id.replace("txtBox", "")) - 1; // 获取当前输入框的索引
+    newCreditCards[index] = e.target.value; // 更新该输入框对应的卡号
+    setCreditCards(newCreditCards);
   };
 
   return (
@@ -65,6 +78,65 @@ const SignUpView = () => {
                 type="text"
                 id="signUpName"
                 className="form-control"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="">CreditCard:</label>
+              <div className="card_div">
+                <input
+                  onChange={(e) => handleCreditCardChange(e)}
+                  type="password"
+                  id="txtBox1"
+                  className="form-control"
+                  maxLength="4"
+                  required
+                />
+                <input
+                  onChange={(e) => handleCreditCardChange(e)}
+                  type="password"
+                  id="txtBox2"
+                  className="form-control"
+                  maxLength="4"
+                  required
+                />
+                <input
+                  onChange={(e) => handleCreditCardChange(e)}
+                  type="password"
+                  id="txtBox3"
+                  className="form-control"
+                  maxLength="4"
+                  required
+                />
+                <input
+                  onChange={(e) => handleCreditCardChange(e)}
+                  type="password"
+                  id="txtBox4"
+                  className="form-control"
+                  maxLength="4"
+                  required
+                />
+              </div>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="CreditBackThree">末三碼:</label>
+              <input
+                onChange={(e) => setCreditCardThree(e.target.value)}
+                type="text"
+                id="CreditBackThree"
+                className="form-control"
+                maxLength="3"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="signUpPhone">手機:</label>
+              <input
+                onChange={(e) => setPhone(e.target.value)}
+                type="text"
+                id="signUpPhone"
+                className="form-control"
+                maxLength="10"
                 required
               />
             </div>
