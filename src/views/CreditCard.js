@@ -21,7 +21,7 @@ const CreditCard = () => {
               </div>
             </Form.Group>
 
-            <Form.Group className="mb-3 d_b" controlId="formId">
+            <Form.Group className="mb-3" controlId="formId">
               <Form.Label>請輸入末3碼</Form.Label>
               <span className="error">不要想不開</span>
               <Form.Control
@@ -32,7 +32,7 @@ const CreditCard = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3 d_b" controlId="formBank">
+            <Form.Group className="mb-3" controlId="formBank">
               <Form.Label>收件人手機</Form.Label>
               <span className="error">千萬不要想不開</span>
               <Form.Control
