@@ -34,43 +34,45 @@ const SignUpView = () => {
 
   return (
     <Layout title="註冊頁" subtitle="Welcome Sign-up">
-      <div class="bg-white border login_div">
-        <form onSubmit={formSubmitHandler}>
-          <div className="mb-3">
-            <label htmlFor="signUpEmail">Email:</label>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              id="signUpEmail"
-              className="form-control"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="signUpPassword">Password:</label>
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              minLength={8}
-              type="password"
-              id="signUpPassword"
-              className="form-control"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="signUpName">Name:</label>
-            <input
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              id="signUpName"
-              className="form-control"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <button className="btn btn-primary">Create Account</button>
-          </div>
-        </form>
+      <div className="flex-grow-1">
+        <div class="bg-white border login_div">
+          <form onSubmit={formSubmitHandler}>
+            <div className="mb-3">
+              <label htmlFor="signUpEmail">Email:</label>
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                id="signUpEmail"
+                className="form-control"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="signUpPassword">Password:</label>
+              <input
+                onChange={(e) => setPassword(e.target.value)}
+                minLength={8}
+                type="password"
+                id="signUpPassword"
+                className="form-control"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="signUpName">Name:</label>
+              <input
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                id="signUpName"
+                className="form-control"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <button className="btn btn-primary">Create Account</button>
+            </div>
+          </form>
+        </div>
       </div>
     </Layout>
   );

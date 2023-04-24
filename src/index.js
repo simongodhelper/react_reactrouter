@@ -13,6 +13,7 @@ import ProductPage from "./views/ProductPage/detail";
 import Login from "./views/Login";
 import SignUpView from "./views/Sign-up";
 import CreditCard from "./views/CreditCard";
+import FinishView from "./views/Finish";
 
 //creat router
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/CreditCard",
     element: <CreditCard />,
+  },
+  {
+    path: "/Finish",
+    element: <FinishView />,
   },
 ]);
 

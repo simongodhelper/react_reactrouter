@@ -63,12 +63,18 @@ const ProductPage = () => {
         </div>
         <p className="card-body">{priceElement}</p>
         {productToShow.joind ? (
-          <button className="btn btn-primary" disabled>
+          <button className="btn btn-lg btn-primary" disabled>
             千萬不要放棄治療
           </button>
         ) : (
-          <Link to="../Login" className="btn-primary">
-            <button className="btn btn-primary">簽下去</button>
+          <Link to="../CreditCard">
+            <button
+              bsStyle="primary"
+              bsSize="large"
+              className="btn btn-lg btn-primary"
+            >
+              簽下去
+            </button>
           </Link>
         )}
       </Layout>
