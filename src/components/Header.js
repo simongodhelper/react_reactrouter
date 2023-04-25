@@ -47,12 +47,17 @@ const Header = ({
 
       <h1>{title}</h1>
       <p>{subtitle}</p>
-      <Link to="/" className="btn btn-primary me-2">
-        ALL
-      </Link>
-      <Link to="/about" className="btn btn-primary">
-        3C商品
-      </Link>
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+        <Link to="/" className="btn btn-primary">
+          ALL
+        </Link>
+        <Link to="/Computer" className="btn btn-primary">
+          3C商品
+        </Link>
+        <Link to="/T1357" className="btn btn-primary">
+          1357
+        </Link>
+      </div>
     </header>
   );
 };

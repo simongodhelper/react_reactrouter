@@ -3,11 +3,10 @@ import productList from "../components/List";
 import ProductDiv from "../components/ProductDiv";
 import moment from "moment";
 
-const AboutView = () => {
+const ComputerView = () => {
   const renderProductList = () => {
     const filteredList = productList.filter(
-      (product) =>
-        [1, 3, 5, 7].includes(product.id) && !(product.price >= 10000)
+      (product) => product.kind === "Computer"
     );
     //時間排序降冪
     const sortedProductList = filteredList.sort((a, b) =>
@@ -43,10 +42,8 @@ const AboutView = () => {
 
   return (
     <div>
-      <Layout title="3C商品" subtitle="3C商品">
-        <h1 style={{ textAlign: "center" }}>
-          只顯示1,3,5,7並按時間排序，售價大於10000不顯示
-        </h1>
+      <Layout title="Computer" subtitle="Computer">
+        <h1 style={{ textAlign: "center" }}>Computer</h1>
         <section>
           <div className="row_1">{renderProductList()}</div>
         </section>
@@ -55,4 +52,4 @@ const AboutView = () => {
   );
 };
 
-export default AboutView;
+export default ComputerView;

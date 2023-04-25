@@ -8,12 +8,13 @@ import reportWebVitals from "./reportWebVitals";
 
 // import views
 import HomeView from "./views/HomeView";
-import AboutView from "./views/AboutView";
 import ProductPage from "./views/ProductPage/detail";
 import Login from "./views/Login";
 import SignUpView from "./views/Sign-up";
 import CreditCard from "./views/CreditCard";
 import FinishView from "./views/Finish";
+import ComputerView from "./views/ComputerView";
+import T1357 from "./views/T1357";
 
 //creat router
 const router = createBrowserRouter([
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
     element: <HomeView />,
   },
   {
-    path: "/about",
-    element: <AboutView />,
+    path: "/T1357",
+    element: <T1357 />,
+  },
+  {
+    path: "/Computer",
+    element: <ComputerView />,
   },
   {
     path: "/ProductPage/detail",
