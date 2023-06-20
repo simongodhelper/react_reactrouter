@@ -1,3 +1,6 @@
+function addCommas(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 const productList = [
   {
     id: 1,
@@ -89,17 +92,14 @@ const productList = [
     detail_1: "產品G的詳細資訊",
   },
 ];
-productList
-  .map((product) => {
-    if (product.price < product.salePrice || product.salePrice === "") {
-      product.salePrice = product.price;
-    }
-    return product;
-  })
-  .forEach((product) => {
-    if (new Date(product.date) < new Date()) {
-      product.salePrice = product.price;
-    }
-  });
+
+productList.map((product) => {
+  if (product.price < product.salePrice || product.salePrice === "") {
+    product.salePrice = product.price;
+  }
+  product.price = addCommas(product.price);
+  product.salePrice = addCommas(product.salePrice);
+  return product;
+})
 
 export default productList;

@@ -3,38 +3,9 @@ import productList from "../../components/List";
 import Pro1 from "./pro1";
 import Pro2 from "./pro2";
 import ProAll from "./proAll";
-//import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Form from "react-bootstrap/Form";
-
-const FormSubmitHandler = () => {
-  const auth = getAuth();
-  const navigate = useNavigate();
-
-  const formSubmitHandler = (e) => {
-    e.preventDefault();
-    // 检查用户是否已登录
-    if (auth.currentUser) {
-      console.log("已登录", auth.currentUser);
-      navigate("/CreditCard");
-    } else {
-      console.log("未登录");
-      // 用 Firebase Auth 登录
-      const email = "example@example.com";
-      const password = "password";
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((res) => {
-          console.log("已登录", res);
-          navigate("/Login");
-        })
-        .catch((err) => {
-          //TODO: error handling
-        });
-    }
-  };
-  return formSubmitHandler;
-};
+import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 
 const ProductPage = () => {
   const title = "ProductPage";
@@ -52,9 +23,35 @@ const ProductPage = () => {
     );
   }
 
-  const formSubmitHandler = FormSubmitHandler();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // 檢查產品id是否為1，若是則引入Pro1組件
+  useEffect(() => {
+    const checkLoginStatus = () => {
+      setIsLoggedIn(isUserLoggedIn());
+    };
+
+    checkLoginStatus(); // Check the login status when the component mounts
+    window.addEventListener('storage', checkLoginStatus);
+
+    return () => {
+      window.removeEventListener('storage', checkLoginStatus);
+    };
+  }, []);
+
+  function isUserLoggedIn() {
+    return localStorage.getItem("isLoggedIn") === "true";
+  }
+
+  const navigate = useNavigate();
+
+  function handleSubmit() {
+    if (isUserLoggedIn()) {
+      navigate("/CreditCard");
+    } else {
+      navigate("/Login");
+    }
+  }
+
   let proElement = null;
   if (productToShow.id === 1) {
     proElement = <Pro1 />;
@@ -64,8 +61,8 @@ const ProductPage = () => {
   }
 
   return (
-    <Form onSubmit={formSubmitHandler}>
-      <div style={{ textAlign: "center" }}>
+    <Form onSubmit={handleSubmit}>
+      <div>
         <Layout title={title} subtitle={subtitle}>
           <h1>no.{productToShow.id}</h1>
           <div className={`img_content ${productToShow.joind ? "joind" : ""}`}>
@@ -76,14 +73,14 @@ const ProductPage = () => {
           </div>
 
           <h3>{productToShow.name}</h3>
-          <div className="img_content" style={{ textAlign: "left" }}>
+          <div className="img_content">
             <p className="product-detail">{productToShow.detail_1}</p>
           </div>
           <div className="img_content">
             {productToShow.img_1}
             {productToShow.img_2}
           </div>
-          <div className="img_content" style={{ textAlign: "left" }}>
+          <div className="img_content">
             <p className="product-detail">{productToShow.detail_2}</p>
           </div>
           <div className="img_content">
@@ -92,7 +89,7 @@ const ProductPage = () => {
           </div>
           {proElement}
           <ProAll />
-          <div className="img_content" style={{ textAlign: "left" }}>
+          <div className="img_content">
             <p className="product-detail">{productToShow.detail_3}</p>
           </div>
           <p className="card-body">{priceElement}</p>
@@ -106,12 +103,11 @@ const ProductPage = () => {
                 width: "fit-content",
               }}
             >
-              千萬不要放棄治療
+              您已經參加過了
             </button>
           ) : (
             <button
-              bsStyle="primary"
-              bsSize="large"
+              type="submit"
               className="btn btn-lg btn-primary"
               style={{
                 display: "inline-block",
@@ -119,7 +115,7 @@ const ProductPage = () => {
                 width: "fit-content",
               }}
             >
-              簽下去
+              {isLoggedIn ? "簽下去" : "請先登入"}
             </button>
           )}
         </Layout>
@@ -128,4 +124,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductPage
